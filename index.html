@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RESBI - Resa & Bebi Financial Planner.">
+  <title>RESBI - Financial Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login" class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-hero">
+      <a class="brand" href="index.html" aria-label="RESBI home">
+        <img src="assets/logo/resbi-logo.svg" alt="RESBI logo">
+        <span><strong>RESBI</strong><small>Resa & Bebi Financial</small></span>
+      </a>
+      <div class="auth-copy">
+        <span class="eyebrow">Financial Dashboard</span>
+        <h1>RESBI</h1>
+        <p>Kelola keuangan Bebi & Resa dengan mudah.</p>
+        <div class="auth-metrics">
+          <div><strong>8+</strong><span>rekening</span></div>
+          <div><strong>100</strong><span>dummy transaksi</span></div>
+          <div><strong>7</strong><span>modul finance</span></div>
+        </div>
+      </div>
+      <img class="auth-preview" src="assets/images/finance-hero.svg" alt="Preview dashboard RESBI">
+    </section>
+
+    <section class="auth-card glass">
+      <div class="section-head compact">
+        <div>
+          <span class="eyebrow">Login</span>
+          <h2>Masuk ke RESBI</h2>
+        </div>
+      </div>
+      <form id="loginForm" class="form-grid one" novalidate>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="email@resbi.id" autocomplete="email" required>
+        </label>
+        <label>
+          <span>Password</span>
+          <div class="input-action">
+            <input type="password" name="password" placeholder="Minimal 6 karakter" autocomplete="current-password" minlength="6" required>
+            <button class="icon-btn" id="togglePassword" type="button" aria-label="Lihat password"><i class="fa-solid fa-eye"></i></button>
+          </div>
+        </label>
+        <label class="check-row">
+          <input type="checkbox" name="remember" checked>
+          <span>Remember session</span>
+        </label>
+        <button class="btn primary full" type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</button>
+        <p class="hint">Demo lokal saat Supabase belum diisi: <strong>bebi@resbi.local</strong> / <strong>resa12345</strong></p>
+      </form>
+    </section>
+  </main>
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="auth.js"></script>
+</body>
+</html>

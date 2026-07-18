@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RESBI dashboard pencatatan keuangan pasangan.">
+  <title>Dashboard - RESBI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard" class="app-page">
+  <aside class="sidebar glass">
+    <a class="brand" href="dashboard.html">
+      <img src="assets/logo/resbi-logo.svg" alt="RESBI logo">
+      <span><strong>RESBI</strong><small>Resa & Bebi</small></span>
+    </a>
+    <nav class="side-nav" aria-label="Navigasi dashboard">
+      <button class="active" data-section-link="dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</button>
+      <button data-section-link="transactions"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transaksi</button>
+      <button data-section-link="fixed"><i class="fa-solid fa-calendar-check"></i> Pengeluaran Tetap</button>
+      <button data-section-link="wishlist"><i class="fa-solid fa-heart"></i> Wishlist</button>
+      <button data-section-link="paylater"><i class="fa-solid fa-credit-card"></i> PayLater</button>
+      <button data-section-link="balances"><i class="fa-solid fa-wallet"></i> Saldo</button>
+      <button data-section-link="reports"><i class="fa-solid fa-chart-line"></i> Laporan</button>
+      <button data-section-link="settings"><i class="fa-solid fa-gear"></i> Pengaturan</button>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn ghost full" id="darkModeToggle" type="button"><i class="fa-solid fa-moon"></i> Dark Mode</button>
+      <button class="btn danger full" id="logoutBtn" type="button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <header class="topbar glass">
+      <div>
+        <span class="eyebrow">Financial Planner</span>
+        <h1 id="pageTitle">Halo Bebi & Resa</h1>
+      </div>
+      <div class="topbar-actions">
+        <div class="clock-card">
+          <strong id="realTimeClock">--:--:--</strong>
+          <span id="todayDate">Memuat tanggal...</span>
+        </div>
+        <button class="icon-btn mobile-menu" id="mobileMenuBtn" type="button" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </header>
+
+    <section class="page-section active" id="section-dashboard">
+      <div id="overviewSkeleton" class="stats-grid skeleton-container"></div>
+      <div class="stats-grid" id="statsGrid"></div>
+      <div class="dashboard-grid">
+        <article class="panel glass">
+          <div class="section-head compact"><div><span class="eyebrow">Trend</span><h2>Cashflow Bulan Ini</h2></div></div>
+          <canvas id="overviewCashflowChart" height="130"></canvas>
+        </article>
+        <article class="panel glass">
+          <div class="section-head compact"><div><span class="eyebrow">Komposisi</span><h2>Pengeluaran Kategori</h2></div></div>
+          <canvas id="overviewCategoryChart" height="130"></canvas>
+        </article>
+      </div>
+      <div class="panel glass">
+        <div class="section-head compact"><div><span class="eyebrow">Aktivitas</span><h2>Transaksi Terbaru</h2></div></div>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Tanggal</th><th>Keterangan</th><th>Sumber</th><th>Jenis</th><th>Jumlah</th></tr></thead><tbody id="recentTransactions"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="section-transactions"></section>
+    <section class="page-section" id="section-fixed"></section>
+    <section class="page-section" id="section-wishlist"></section>
+    <section class="page-section" id="section-paylater"></section>
+    <section class="page-section" id="section-balances"></section>
+    <section class="page-section" id="section-reports"></section>
+    <section class="page-section" id="section-settings"></section>
+  </main>
+
+  <button class="fab" id="globalFab" type="button" aria-label="Tambah data"><i class="fa-solid fa-plus"></i></button>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <div class="modal" id="crudModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel glass">
+      <button class="icon-btn modal-close" type="button" data-close-modal aria-label="Tutup modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="section-head compact"><div><span class="eyebrow" id="modalEyebrow">Form</span><h2 id="modalTitle">Tambah Data</h2></div></div>
+      <form id="crudForm" class="form-grid" novalidate></form>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

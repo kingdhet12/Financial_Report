@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-label="RESBI finance dashboard preview">
+  <defs>
+    <linearGradient id="bg" x1="150" y1="36" x2="1040" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF6FF"/>
+      <stop offset=".55" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#ECFDF5"/>
+    </linearGradient>
+    <linearGradient id="card" x1="236" y1="168" x2="926" y2="648" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="32" stdDeviation="28" flood-color="#1E3A8A" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="820" rx="52" fill="url(#bg)"/>
+  <circle cx="146" cy="156" r="88" fill="#DBEAFE"/>
+  <circle cx="1036" cy="158" r="112" fill="#DCFCE7"/>
+  <circle cx="1032" cy="692" r="70" fill="#FEF3C7"/>
+  <g filter="url(#shadow)">
+    <rect x="180" y="132" width="840" height="556" rx="34" fill="#fff"/>
+    <rect x="218" y="174" width="220" height="472" rx="24" fill="#F8FAFC"/>
+    <rect x="468" y="174" width="510" height="164" rx="24" fill="url(#card)"/>
+    <rect x="500" y="214" width="180" height="16" rx="8" fill="#fff" opacity=".72"/>
+    <rect x="500" y="254" width="250" height="38" rx="12" fill="#fff" opacity=".95"/>
+    <circle cx="903" cy="252" r="48" fill="#fff" opacity=".16"/>
+    <path d="M826 281c24-42 73-62 118-48" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".75"/>
+    <rect x="468" y="368" width="238" height="120" rx="20" fill="#EFF6FF"/>
+    <rect x="738" y="368" width="240" height="120" rx="20" fill="#ECFDF5"/>
+    <rect x="468" y="520" width="510" height="126" rx="20" fill="#F8FAFC"/>
+    <path d="M508 610 574 562l62 31 70-76 76 48 84-91" fill="none" stroke="#2563EB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="252" y="228" width="126" height="16" rx="8" fill="#CBD5E1"/>
+    <rect x="252" y="286" width="148" height="16" rx="8" fill="#2563EB" opacity=".72"/>
+    <rect x="252" y="344" width="116" height="16" rx="8" fill="#CBD5E1"/>
+    <rect x="252" y="402" width="142" height="16" rx="8" fill="#CBD5E1"/>
+    <rect x="252" y="460" width="98" height="16" rx="8" fill="#CBD5E1"/>
+  </g>
+</svg>
