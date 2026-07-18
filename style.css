@@ -220,7 +220,7 @@ img {
   right: -110px;
   bottom: -70px;
   width: min(760px, 88%);
-  opacity: 0.9;
+  opacity: 0.3;
   filter: drop-shadow(0 30px 40px rgba(15, 23, 42, 0.22));
 }
 
