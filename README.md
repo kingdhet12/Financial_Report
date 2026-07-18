@@ -2,6 +2,23 @@
 
 **RESBI** adalah web app financial planner pasangan untuk mencatat pemasukan, pengeluaran, investasi, saldo rekening, wishlist, pengeluaran tetap, paylater, dan laporan keuangan.
 
+---
+
+Support Admin 💵 💰
+https://saweria.co/resae
+
+---
+
+## 🌐 Live Demo
+
+> GitHub Pages:
+> https://github.com/kingdhet12
+
+> Link Demo:
+> https://financial-report-orcin.vercel.app/
+
+---
+
 Tech stack:
 
 - HTML5
@@ -51,8 +68,8 @@ Tidak memakai React, Vue, Angular, Bootstrap, Tailwind, Laravel, atau Node.js.
 Mode demo lokal tersedia jika Supabase belum diisi:
 
 ```text
-Email    : bebi@resbi.local
-Password : resa12345
+Email    : -
+Password : -
 ```
 
 ## Konfigurasi Supabase
@@ -63,7 +80,7 @@ Edit `config.js`:
 export const CONFIG = {
   SUPABASE_URL: "https://PROJECT_ID.supabase.co",
   SUPABASE_ANON_KEY: "SUPABASE_ANON_KEY_ANDA",
-  SUPABASE_STORAGE_BUCKET: "resbi-attachments"
+  SUPABASE_STORAGE_BUCKET: "resbi-attachments",
 };
 ```
 
